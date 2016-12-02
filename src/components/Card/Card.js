@@ -9,7 +9,6 @@ class Card extends Component{
                 <h4>Card Title</h4>
                 <CardDescription />
                 <CommentList />    
-                
             </div>
         )
     }
