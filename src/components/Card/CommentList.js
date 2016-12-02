@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
-
+import Comment from './Comment';
 class CommentList extends Component{
     constructor(props){
         super(props);
         this.state = {
             commentList: [],
             comment: {
+                commentId: 0,
                 commentText : "",
                 commentDate : ""
             }
         }
     }
     handleComment(event){
+        event.preventDefault();
         this.setState({
             comment: {
                 commentText: event.target.value.trim(),
@@ -41,7 +43,7 @@ class CommentList extends Component{
                 </form>
                 {
                     this.state.commentList.map((comment,index)=>{
-                        return <Comment comment={comment} index={index}/>
+                        return <Comment comment={comment} index={index} />
                     })
                 }
             </div>

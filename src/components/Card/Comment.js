@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class Comment extends Component{
     render(){
+        console.log(this.props.comment.commentId);
         return (
             <div className="row" key={this.props.index}>
                 <div className="col-xs-4">
