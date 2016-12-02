@@ -1,0 +1,5 @@
+module.exports = {
+    CREATE_CARD: 'CREATE_CARD',
+    LIST_COUNT: 'LIST_COUNT',
+    LOAD_TASK_DATA: 'LOAD_TASK_DATA'
+}
