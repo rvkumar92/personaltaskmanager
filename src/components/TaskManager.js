@@ -7,6 +7,7 @@ class TaskManager extends Component{
     constructor(props){
         super(props);
         this.state = getAppState();
+        this.onChange = this.onChange.bind(this);
     }
     componentDidMount(){
         TaskStore.addChangeListener(this.onChange);
@@ -23,8 +24,9 @@ class TaskManager extends Component{
         })
     }
     render(){
+        console.log('data',this.state.taskData);
         return(
-            <div>
+            <div className="container-fluid">
                 <Header />
                 <ListOfLists taskData={this.state.taskData} />
                 

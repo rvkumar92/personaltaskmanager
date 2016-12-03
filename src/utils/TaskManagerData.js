@@ -33,7 +33,9 @@ var listOfLists1 = {
     id: 1,
     cards: cards 
 }
-board.push(listOfLists1);
+var listofLists = [];
+listofLists.push(listOfLists1);
+board.push(listOfLists);
 
 
 
