@@ -10,11 +10,11 @@ class ListOfLists extends Component{
             taskData: TaskStore.getTaskData(),
             listOfLists: TaskStore.getListOfLists(),
             listCount: TaskStore.getListCount(),
-            boards: TaskStore.getBoards()
+            boards: TaskStore.getBoards(),
+            selectedBoard: []
         }
     }
     render(){
-        console.log('boads',this.state.taskData);
         return(
             <div className="row">
                 {
@@ -28,13 +28,12 @@ class ListOfLists extends Component{
                                             <button className="btn btn-sm btn-default pull-right" onClick={this.deleteList.bind(this,board)}>Delete this list</button>
                                         </div>
                                     </div>
-                                    
                                     {
-                                        board.list.map((card,index)=>{
+                                        board.list.map((card,index,board)=>{
                                             return <ListOfCards card={card} index={index}/>
                                         })
                                     }
-                                    <button className="btn btn-sm btn-default">Add new card...</button>
+                                    <button className="btn btn-sm btn-default" onClick={this.addNewCard.bind(this,board)}>Add new card...</button>
                                 </div>
                             </div>
                         )
@@ -45,16 +44,25 @@ class ListOfLists extends Component{
             </div>
         ) 
     }
+    addNewCard(board,event){
+        var card = {
+            listId: board.list.id,
+            id: board.list.length + 1,
+            title: "Card title",
+            desription: "This is the description of the card to be created.",
+            comments: []
+        };
+        TaskActions.setNewCard(card,board);
+    }
     addNewList(event){
         var listOfLists = {
             header: "List",
             id: this.state.taskData.length + 1,
             list: []
         };
-        TaskActions.setListOfLists(listOfLists).bind(this);
+        TaskActions.setListOfLists(listOfLists);
     }
     deleteList(task,event){
-        console.log(task);
         TaskActions.deleteListFromBoard(task);
     }
 }

@@ -38,18 +38,16 @@ listofLists.push(listOfLists1);
 board.push(listOfLists);
 
 
-
-
-
-
 var _taskData = [
             {
                 header: "List",
                 id: 1,
                 list:[
                     {
+                        listId: 1,
+                        id: 1,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
@@ -66,8 +64,10 @@ var _taskData = [
                         ]
                     },
                     {
+                        listId: 1,
+                        id: 2,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
@@ -84,8 +84,10 @@ var _taskData = [
                         ]
                     },
                     {
+                        listId: 1,
+                        id: 3,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
@@ -108,8 +110,10 @@ var _taskData = [
                 id: 2,
                 list:[
                     {
+                        listId:2,
+                        id: 1,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
@@ -126,8 +130,10 @@ var _taskData = [
                         ]
                     },
                     {
+                        listId:2,
+                        id: 2,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
@@ -150,19 +156,21 @@ var _taskData = [
                 id: 3,
                 list:[
                     {
+                        listId: 3,
+                        id: 1,
                         title: "Card title",
-                        description: "description",
+                        description: "Card description",
                         comments: [
                             {
                                 text: "Comment 1",
                                 date: "10/11/2016"
                             },
                             {
-                                text: "Comment 1",
+                                text: "Comment 2",
                                 date: "10/11/2016"
                             },
                             {
-                                text: "Comment 1",
+                                text: "Comment 3",
                                 date: "10/11/2016"
                             }
                         ]

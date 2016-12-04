@@ -24,7 +24,6 @@ class TaskManager extends Component{
         })
     }
     render(){
-        console.log('data',this.state.taskData);
         return(
             <div className="container-fluid">
                 <Header />

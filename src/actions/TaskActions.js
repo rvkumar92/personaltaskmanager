@@ -31,6 +31,19 @@ var TaskActions = {
             actionType: Constants.DELETE_LIST_FROM_BOARD,
             listToDelete: list
         })
+    },
+    setNewCard(card,board){
+        TaskDispatcher.handleViewActions({
+            actionType: Constants.SET_NEW_CARD,
+            card: card,
+            board: board
+        })
+    },
+    deleteCardFromList(cardToDelete){
+        TaskDispatcher.handleViewActions({
+            actionType: Constants.DELETE_CARD_FROM_LIST,
+            cardToDelete: cardToDelete
+        })
     }
 }
 

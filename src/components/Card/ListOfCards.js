@@ -27,7 +27,7 @@ class ListOfCards extends Component{
                 </div>
                 <Modal show={this.state.showModal} bsSize="large" onHide={this.close.bind(this)}>
                     <Modal.Body>
-                        <Card />
+                        <Card singleCard = {this.props.card} listInBoard = {this.props.board}/>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.close.bind(this)}>Close</Button>

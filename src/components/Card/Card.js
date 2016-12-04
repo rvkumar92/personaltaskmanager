@@ -7,7 +7,7 @@ class Card extends Component{
         return(
             <div className="well">
                 <h4>Card Title</h4>
-                <CardDescription />
+                <CardDescription singleCard = {this.props.singleCard} listInBoard = {this.props.listInBoard}/>
                 <CommentList />    
             </div>
         )

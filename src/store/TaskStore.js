@@ -36,7 +36,6 @@ var TaskStore = assign({},EventEmitter.prototype,{
         _cards.push(card);
     },
     setListOfLists(listOfLists){
-        console.log(listOfLists);
         _taskData.push(listOfLists);
     },
     getListOfLists(){
@@ -52,12 +51,24 @@ var TaskStore = assign({},EventEmitter.prototype,{
         _boards = boardData;
     },
     deleteListFromBoard(listToDelete){
-        console.log('list',listToDelete);
         var index = _taskData.findIndex(x => x.id == listToDelete.id);        
-        console.log('index',index);
-        _taskData.splice(index,1);
-        //var index = _taskData.findIndex(i => i._id.$oid === listToDelete.id);
-        //_notes.splice(index,1);
+        _taskData.splice(index,1);    
+    },
+    setNewCard(card,board){
+        for(let value of _taskData ){
+            if(value.id == board.id){
+                value.list.push(card);
+            }
+        }
+    },
+    deleteCardFromList(cardToDelete){
+        for(let list of _taskData){
+            for(let card of list.list){
+                if(card.listId == cardToDelete.listId){
+                    list.list.splice(cardToDelete.id - 1);
+                }
+            }
+        }
     }
 });
 
@@ -83,6 +94,14 @@ TaskDispatcher.register(function(payload){
         case Constants.DELETE_LIST_FROM_BOARD:
             TaskStore.deleteListFromBoard(action.listToDelete);
             TaskStore.emit(CHANGE_EVENT);
+        case Constants.SET_NEW_CARD:
+            TaskStore.setNewCard(action.card,action.board);
+            TaskStore.emit(CHANGE_EVENT);
+            break;
+        case Constants.DELETE_CARD_FROM_LIST:
+            TaskStore.deleteCardFromList(action.cardToDelete);
+            TaskStore.emit(CHANGE_EVENT);
+            break;
     }
     return true;
 });
