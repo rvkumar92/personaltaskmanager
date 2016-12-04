@@ -1,0 +1,15 @@
+body{
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.board{
+    display: flex;
+    width: 3072px;
+}
+.cardBoard{
+    width: 20em;
+    padding-right: 1em;
+}
+.cardBoardButton{
+    height: 3em;
+}
