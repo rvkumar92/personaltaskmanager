@@ -16,11 +16,11 @@ class ListOfLists extends Component{
     }
     render(){
         return(
-            <div className="row">
+            <div className="board">
                 {
                     this.state.taskData.map((board,i)=>{
                         return(
-                            <div className="col-xs-3" key={i}>
+                            <div className="cardBoard" key={i}>
                                 <div className="well">
                                     <div className="row">
                                         <div className="col-xs-12">
@@ -40,7 +40,7 @@ class ListOfLists extends Component{
                         
                     })
                 }
-                <button className="btn btn-default btn-sm" onClick={this.addNewList.bind(this)}>Add new list...</button>
+                <button className="btn btn-default btn-sm cardBoardButton" onClick={this.addNewList.bind(this)}>Add new list...</button>
             </div>
         ) 
     }
