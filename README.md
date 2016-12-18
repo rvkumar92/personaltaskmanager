@@ -9,5 +9,5 @@ Modal for a Card
 
 To run the project:
 * Clone or download the project
-* Goto the project and do npm install && bower install
-* Run webpack-dev-server,navigate to http://localhost:8080
+* Open command promt/terminal and do npm start
+* Open your browser, content will be served at http://localhost:8080
